@@ -10,12 +10,13 @@ set numberwidth=3
 set cpoptions+=n
 set nuw=4
 syntax on
+syntax enable
 filetype plugin indent on
 set clipboard+=unnamedplus " clipboard
-color dracula
-hi Normal ctermbg=none "禁用终端颜色
+colorscheme darkblue
+" hi Normal ctermbg=none "禁用终端颜色
 " set t_Co=0
-" set termguicolors "背景颜色
+set termguicolors "使用init设定背景颜色
 set t_Co=256
 "" --------------------------------------------------------------------
 
@@ -41,10 +42,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
 " Markdown
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-" 以太币
-Plug 'tomlion/vim-solidity'
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
+" Dracula 主题
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 "" --------------------------------------------------------------------
 
@@ -120,6 +121,7 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
 " Markdown
 let g:vim_markdown_conceal = 0
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
 
 " fjasl
 :nn <M-1> 1gt
