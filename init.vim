@@ -13,7 +13,7 @@ syntax on
 syntax enable
 filetype plugin indent on
 set clipboard+=unnamedplus " clipboard
-colorscheme darkblue
+colorscheme lucariox
 " hi Normal ctermbg=none "禁用终端颜色
 " set t_Co=0
 set termguicolors "使用init设定背景颜色
